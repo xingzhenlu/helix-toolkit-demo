@@ -55,27 +55,6 @@ public partial class UserControl1ViewModel : IDisposable
 
     #region Commands
 
-    /// <summary>
-    /// Loaded Event(Use <see cref="EventBindingExtension"/> to implement)
-    /// </summary>
-    /// <param name="e"></param>
-    [GenerateCommand]
-    void Viewport3DXLoaded(RoutedEventArgs e)
-    {
-        _viewport3 = e.Source as Viewport3DX;
-        Open3DFile();
-    }
-
-    /// <summary>
-    /// UnLoaded Event(Use <see cref="EventBindingExtension"/> to implement)
-    /// </summary>
-    /// <param name="e"></param>
-    [GenerateCommand]
-    void UserControlUnLoaded(RoutedEventArgs e)
-    {
-        Dispose();
-    }
-
     [GenerateCommand(CanExecuteMethod = nameof(CanFocusCameraToScene))]
     void FocusCameraToScene()
     {
@@ -90,6 +69,26 @@ public partial class UserControl1ViewModel : IDisposable
     #endregion
 
     #region Methods 
+
+    /// <summary>
+    /// Loaded Event(Use <see cref="DevExpress.Xpf.DXBinding.DXEventExtension"/> to implement)
+    /// </summary>
+    /// <param name="e"></param>
+    public void Viewport3DXLoaded(RoutedEventArgs e)
+    {
+        _viewport3 = e.Source as Viewport3DX;
+        Open3DFile();
+    }
+
+    /// <summary>
+    /// UnLoaded Event(Use <see cref="DevExpress.Xpf.DXBinding.DXEventExtension"/> to implement)
+    /// </summary>
+    /// <param name="e"></param>
+    public void UserControlUnLoaded(RoutedEventArgs e)
+    {
+        Dispose();
+    }
+
     async void Open3DFile()
     {
         var modelfile = new FileInfo(@".\Assets\Substation\scene.gltf");

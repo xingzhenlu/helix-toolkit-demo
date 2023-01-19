@@ -6,10 +6,9 @@
     xmlns:hx="http://helix-toolkit.org/wpf/SharpDX"
     xmlns:local="clr-namespace:Demo.Modules"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mvvm="clr-namespace:Demo"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Unloaded="{mvvm:EventBinding UserControlUnLoadedCommand}"
+    Unloaded="{DXEvent Handler='UserControlUnLoaded(@args)'}"
     mc:Ignorable="d">
     <UserControl.DataContext>
         <local:UserControl1ViewModel />
@@ -26,7 +25,7 @@
             FXAALevel="Low"
             FixedRotationPoint="{Binding ModelCentroid}"
             FixedRotationPointEnabled="True"
-            Loaded="{mvvm:EventBinding Viewport3DXLoadedCommand}"
+            Loaded="{DXEvent Handler='Viewport3DXLoaded(@args)'}"
             Visibility="{Binding IsLoading, Converter={StaticResource boolToVisibilityConverter}}">
             <hx:Viewport3DX.InputBindings>
                 <KeyBinding Key="B" Command="hx:ViewportCommands.BackView" />
