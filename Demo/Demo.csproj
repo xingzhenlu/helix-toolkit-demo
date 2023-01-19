@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>disable</Nullable>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Assets\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DevExpress.Mvvm.CodeGenerators" Version="22.1.*-*" />
+		<PackageReference Include="HelixToolkit.SharpDX.Assimp" Version="2.23.0" />
+		<PackageReference Include="HelixToolkit.SharpDX.Core.Wpf" Version="2.23.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="DevExpress.Mvvm.v22.2">
+			<HintPath>Assets\DevExpress.Mvvm.v22.2.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
