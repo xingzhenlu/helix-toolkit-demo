@@ -361,9 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-# 自定义排除项
-RuntimeAssets/
-# 排除所有的zip文件，除了zh-Hans.zip
-*.zip
-!zh-Hans.zip
